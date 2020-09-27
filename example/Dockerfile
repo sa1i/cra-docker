@@ -1,3 +1,3 @@
-FROM inloopx/cra-docker
+FROM sa1i/cra-docker
 
 COPY build /app
