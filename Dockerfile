@@ -10,7 +10,7 @@ RUN apk add --no-cache alpine-sdk && \
 
 FROM openbridge/nginx:latest
 
-COPY location.conf /etc/nginx/conf.d/location.conf
+COPY location.conf /conf/html/nginx/conf.d/location.conf
 COPY entrypoint.sh /usr/local/bin/start-app
 COPY --from=0 /usr/local/bin/jo /usr/local/bin/jo
 
