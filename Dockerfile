@@ -14,7 +14,7 @@ COPY entrypoint.sh /usr/local/bin/start-app
 COPY --from=0 /usr/local/bin/jo /usr/local/bin/jo
 
 RUN chmod +x /usr/local/bin/start-app && \
-    chmod +x /usr/local/bin/jo && 
+    chmod +x /usr/local/bin/jo
 
 WORKDIR /usr/share/nginx/html
 
