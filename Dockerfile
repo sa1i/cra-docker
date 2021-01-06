@@ -8,16 +8,14 @@ RUN apk add --no-cache alpine-sdk && \
     make check && \
     make install
 
-FROM nginx:alpine
+FROM openbridge/nginx:latest
 
-COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY entrypoint.sh /usr/local/bin/start-app
 COPY --from=0 /usr/local/bin/jo /usr/local/bin/jo
 
 RUN chmod +x /usr/local/bin/start-app && \
-    chmod +x /usr/local/bin/jo && \
-    mkdir /app
+    chmod +x /usr/local/bin/jo && 
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
 ENTRYPOINT [ "sh", "/usr/local/bin/start-app" ]
