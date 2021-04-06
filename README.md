@@ -34,3 +34,5 @@ docker run --rm -p 8080:80 my-new-app
 Now if you open [http://localhost:8080](http://localhost:8080) You should see your app.
 
 You can find more in [example](example) directory. Also if you use gitlab, don't miss the [pipeline configuration file example](example/.gitlab-ci.yml)
+
+docker build -t sa1i/cra-docker:$(git rev-parse --short HEAD) .;docker push sa1i/cra-docker:$(git rev-parse --short HEAD)
